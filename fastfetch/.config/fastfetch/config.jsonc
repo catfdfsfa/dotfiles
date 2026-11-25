@@ -6,20 +6,31 @@
       "top": 2
     }
   },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "green"
+    }
+  },
   "modules": [
     "title",
     "separator",
-    "host",
-    "wm",
-    "os",
-    
-    "shell",
-    
-    "terminal",
+    { "type": "host",     "key": "\uf108  Host" },
+    { "type": "os",       "key": "\uf303  OS" },
+    { "type": "wm",       "key": "\uf2d0  WM" },
+    { "type": "terminal", "key": "\uf120  Term" },
+    { "type": "shell",    "key": "\uf489  Shell" },
     "break",
-    "memory",
-    "cpu",
-    "gpu",
+    {
+        "type": "command",
+        "key": "OS Age",
+        "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
+    },
+    "uptime",
+    "break",
+    { "type": "memory",   "key": "\uefc5  RAM" },
+    { "type": "cpu",      "key": "\uf4bc  CPU" },
+    { "type": "gpu",      "key": "\uf26c  GPU" },
     "separator",
     "colors"
   ]
